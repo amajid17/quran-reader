@@ -2,15 +2,6 @@
 
 > A focused Arabic Quran reader for iOS and Android. Tajweed rules rendered inline. Three bundled typefaces. Everything works offline, from day one, with no account and no network.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Expo-SDK%2054-000000?style=flat-square&logo=expo&logoColor=white" />
-  <img src="https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat-square&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-3DDC84?style=flat-square" />
-  <img src="https://img.shields.io/badge/Offline-First-1a1a2e?style=flat-square" />
-  <img src="https://img.shields.io/badge/License-MIT-6c757d?style=flat-square" />
-</p>
-
 ---
 
 ## Try it
