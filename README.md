@@ -2,6 +2,15 @@
 
 > A focused Arabic Quran reader for iOS and Android. Tajweed rules rendered inline. Three bundled typefaces. Everything works offline, from day one, with no account and no network.
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Expo-SDK%2054-000000?style=flat-square&logo=expo&logoColor=white" />
+  <img src="https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat-square&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-3DDC84?style=flat-square" />
+  <img src="https://img.shields.io/badge/Offline-First-1a1a2e?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-6c757d?style=flat-square" />
+</p>
+
 ---
 
 ## Try it
@@ -12,11 +21,9 @@
 
 **iOS — Expo Go**
 
-Scan with the [Expo Go](https://expo.dev/go) app
+[![Open in Expo Go](https://img.shields.io/badge/Open%20in%20Expo%20Go-000000?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/accounts/robert_19/projects/quran-reader/updates/0d0bf5eb-7135-4814-95bb-6d3630dd29ed)
 
-<img src="assets/qr_code.png" width="160" alt="Expo Go QR code" />
-
-*Opens directly in Expo Go on your device*
+*Requires [Expo Go](https://expo.dev/go) on your device*
 
 </td>
 <td align="center" width="50%">
@@ -25,7 +32,13 @@ Scan with the [Expo Go](https://expo.dev/go) app
 
 No Expo Go required
 
-[![Download APK](https://img.shields.io/badge/Download%20Android%20Preview-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/accounts/robert_19/projects/quran-reader/builds/9dd4b04a-1374-40d4-bd67-6f4d66f10bf2)
+[![Download APK](https://img.shields.io/badge/Download%20Android%20Preview-3DDC84?style=for-the-badge&logo=android&logoColor=white)](YOUR_ANDROID_PREVIEW_URL)
+
+*Installs as a standalone APK*
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -149,89 +162,6 @@ App.tsx
 **Error boundary placement** — The boundary wraps everything below font loading. If a screen throws, the recovery UI can still render because fonts are guaranteed ready. Bookmarks and reading progress (AsyncStorage) are outside the component tree and survive any render error.
 
 **Theme isolation** — `ThemedStatusBar` is a separate component inside the provider so it can call `useTheme()` without being blocked by the class-based `ErrorBoundary` above it. Class components can't use hooks, so the status bar lives one level down.
-
----
-
-## License
-
-MIT- **Error boundary** — catches unexpected crashes gracefully and lets the user resume without losing progress
-- **Fully offline** — all Quran data is bundled at build time; no network requests at runtime
-
----
-
-## Tech Stack
-
-| Layer | Choice |
-|---|---|
-| Framework | React Native 0.81 + Expo SDK 54 |
-| Language | TypeScript |
-| Navigation | React Navigation v7 (Native Stack + Bottom Tabs) |
-| Quran data | `quran-json` |
-| Tajweed rendering | `rn-tajweed-verse` |
-| Fonts | `expo-font` (Scheherazade New, Noto Sans Arabic, Literata Bold) |
-| Storage | `@react-native-async-storage/async-storage` |
-| Gestures | `react-native-gesture-handler` |
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- Expo CLI: `npm install -g expo-cli`
-- Expo Go app on your phone **or** a simulator
-
-### Install & Run
-
-```bash
-git clone https://github.com/amajid17/Quran-reader.git
-cd quran-reader
-npm install
-npx expo start
-```
-
-Scan the QR code with Expo Go (iOS / Android) to run instantly on your device.
-
-### Build for Production
-
-```bash
-npx eas build --platform ios
-npx eas build --platform android
-```
-
-Requires an [Expo EAS](https://expo.dev/eas) account (free tier is sufficient).
-
----
-
-## Project Structure
-
-```
-quran-reader/
-├── App.tsx                   # Root: error boundary, fonts, theme, navigator
-├── app.json                  # Expo config (bundle IDs, splash, orientation)
-├── assets/
-│   └── fonts/                # Bundled Arabic & Latin fonts
-└── src/
-    ├── navigation/
-    │   └── AppNavigator.tsx  # Stack + tab structure
-    ├── theme/
-    │   └── ThemeContext.tsx  # Dark/light mode provider + useTheme hook
-    └── data/
-        └── integrityCheck.ts # Validates bundled Quran data at startup
-```
-
----
-
-## Architecture Notes
-
-**Fonts** — Loaded at startup via `expo-font`; splash screen is held open until fonts resolve, preventing a flash of unstyled Arabic text.
-
-**Theme** — A React context wraps the entire tree. `ThemedStatusBar` is a small dedicated component inside the provider so it can call `useTheme()` without breaking the class-based `ErrorBoundary` above it.
-
-**Integrity check** — Runs once after fonts are ready. In development, any checksum mismatch logs which surahs failed and points to the download script. In production, this check is silent to avoid alarming users over minor data discrepancies.
-
-**Error boundary** — If a screen crashes, the boundary catches it, logs the component stack in dev, and shows a recovery screen with a "Try again" button. Bookmarks and reading progress (stored externally in AsyncStorage) are unaffected.
 
 ---
 
