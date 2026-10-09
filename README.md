@@ -3,7 +3,7 @@
 > A focused Arabic Quran reader for iOS and Android. Tajweed rules rendered inline. Three bundled typefaces. Everything works offline, from day one, with no account and no network.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Expo-SDK%2054-000000?style=flat-square&logo=expo&logoColor=white" />
+  <img src="https://img.shields.io/badge/Expo-SDK%2057-000000?style=flat-square&logo=expo&logoColor=white" />
   <img src="https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat-square&logo=react&logoColor=black" />
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-3DDC84?style=flat-square" />
@@ -15,30 +15,11 @@
 
 ## Try it
 
-<table>
-<tr>
-<td align="center" width="50%">
+**Android — Preview build** · No Expo Go required
 
-**iOS — Expo Go**
+[![Download Android Preview](https://img.shields.io/badge/Download%20Android%20Preview-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/accounts/robert_19/projects/quran-reader/builds/9dd4b04a-1374-40d4-bd67-6f4d66f10bf2)
 
-[![Open in Expo Go](https://img.shields.io/badge/Open%20in%20Expo%20Go-000000?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/accounts/robert_19/projects/quran-reader/updates/0d0bf5eb-7135-4814-95bb-6d3630dd29ed)
-
-*Requires [Expo Go](https://expo.dev/go) on your device*
-
-</td>
-<td align="center" width="50%">
-
-**Android — Preview build**
-
-No Expo Go required
-
-[![Download APK](https://img.shields.io/badge/Download%20Android%20Preview-3DDC84?style=for-the-badge&logo=android&logoColor=white)](YOUR_ANDROID_PREVIEW_URL)
-
-*Installs as a standalone APK*
-
-</td>
-</tr>
-</table>
+*Installs as a standalone APK — no app store, no account needed*
 
 ---
 
@@ -91,7 +72,7 @@ There is no server, no analytics SDK, no login flow, and no data that leaves the
 
 | Layer | Choice | Why |
 |---|---|---|
-| Framework | React Native 0.81 · Expo SDK 54 | Managed workflow — single codebase, iOS + Android |
+| Framework | React Native 0.81 · Expo SDK 57 | Managed workflow — single codebase, iOS + Android |
 | Language | TypeScript | Type safety on navigation params, theme context, data shapes |
 | Navigation | React Navigation v7 | Native stack + bottom tabs; RTL-aware |
 | Quran data | `quran-json` | Complete, well-structured, bundleable at build time |
@@ -135,8 +116,7 @@ quran-reader/
 ├── index.ts                    # Entry point
 ├── app.json                    # Expo config: bundle IDs, splash, orientation
 ├── assets/
-│   ├── fonts/                  # Scheherazade New, Noto Sans Arabic, Literata Bold
-│   └── qr_code.png             # Expo Go QR code
+│   └── fonts/                  # Scheherazade New, Noto Sans Arabic, Literata Bold
 ├── screenshots/                # Store listing + README screenshots
 └── src/
     ├── navigation/
